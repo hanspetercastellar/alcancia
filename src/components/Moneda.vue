@@ -1,4 +1,4 @@
-
+<!-- Renderiza la lista de monedas en la alcancia-->
 <template>
   <li v-for="(moneda, index) in alcancia" :key="index"
       class="transition shadow-lg duration-500 ease-in-out  transform hover:-translate-y-1 hover:scale-110">

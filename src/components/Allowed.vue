@@ -1,4 +1,4 @@
-
+<!-- Componente encargado de renderizar la lista de monedas permitidas-->
 <template>
   <section class="flex justify-between rounded-lg  bg-purple-300 p-3 bg-opacity-50	">
 

@@ -1,3 +1,6 @@
+/*
+* Empapsula la funcionalidad y las acciones de un monedero
+* */
 import {reactive, toRefs} from "vue";
 
 export default function () {
@@ -13,7 +16,7 @@ export default function () {
         total:null,
         unidades: null
     })
-
+    //esta funcion se encarga de agregar una moneda a la alcancía
     const agregarMoneda = () => {
 
 
@@ -36,7 +39,8 @@ export default function () {
         data.moneda = null
         data.mensaje = "Agregue una moneda a la alcancia"
     }
-
+    //funcion encargada de setear los valores para la moneda consultada
+    //numero de monedas de X denominacion y la suma de estas
     const consultar = () => {
         data.mensaje2 = ""
         if (typeof data.monedaAconsultar != 'string') {
