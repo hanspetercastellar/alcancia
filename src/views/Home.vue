@@ -1,24 +1,43 @@
 <template>
- <div class="flex mb-5">
-   <div class="flex flex-col w-80 mx-auto">
-     <h2>{{ mensaje }}</h2> {{ totalMonedas }}<br>
-
-     <input placeholder="Agregar valor" type="text" id="moneda"
+ <div class="flex mb-5 container items-center	  mx-auto ">
+   <div class="flex flex-col rounded-lg  bg-purple-300 p-3 bg-opacity-50 h-60">
+     <label for="moneda">{{ mensaje }}</label>
+     <input placeholder="Agregar moneda" type="text" id="moneda"
             class="form-input placeholder-indigo-500 transform duration-150 placeholder-opacity-50  ease-in-out rounded text-pink-500"
             v-model="moneda" @keypress.enter="agregarMoneda"/>
-
-   </div>
-   <div class="flex flex-col w-80 mx-auto">
      <h2 class="total">{{ current }}</h2>
+     <div>
+       <span>Unidades: {{totalMonedas}}</span>
+     </div>
    </div>
-   <div class="flex flex-col w-80 mx-auto">
+   <div class="flex flex-col w-80 mx-auto  rounded-lg   bg-purple-300 p-3 bg-opacity-50 h-60">
+     <label for="moneda">Consultar</label>
+      <input type="text" v-model="monedaAconsultar" @keypress.enter="consultar" placeholder="Ingrese un valor permitido" class="form-input placeholder-indigo-500 transform duration-150 placeholder-opacity-50  ease-in-out rounded text-pink-500">
+     <div>
+       <span>{{mensaje2}}</span>
+     </div>
+     <div>
+       <table class="">
+         <tr>
+           <th>Unidades</th>
+           <th>Total</th>
+         </tr>
+         <tbody>
+         <tr>
+           <td> {{unidades}}</td>
+           <td>{{total}}</td>
+         </tr>
+         </tbody>
 
+       </table>
+
+     </div>
    </div>
    <Allowed :total="current"/>
  </div>
 
-
-  <div id="" class="shadow-lg p-3 container mx-auto bg-yellow-200 rounded-lg mt-3 ">
+  <h1 class="prose-2xl">Alcancía</h1>
+  <div id="" class="shadow-lg p-3 container mx-auto bg-yellow-200 rounded-lg mt-3 bg-opacity-50">
 
     <ul class="grid grid-flow-col grid-cols-3 grid-rows-3 gap-4  md:grid-flow-col">
       <Moneda :alcancia="alcancia"/>
@@ -71,8 +90,9 @@ export default {
 
   },
   setup() {
-    const {alcancia, permitidas, mensaje, isAllowed, agregarMoneda, moneda} = useMonedero()
-    return {alcancia, permitidas, mensaje, isAllowed, agregarMoneda, moneda}
+    const {alcancia, permitidas, mensaje,mensaje2,monedaAconsultar, isAllowed, agregarMoneda,consultar, moneda,total,unidades
+    } = useMonedero()
+    return {alcancia, permitidas, mensaje,mensaje2, isAllowed,monedaAconsultar, agregarMoneda,consultar, moneda,total,unidades}
   }
 }
 </script>

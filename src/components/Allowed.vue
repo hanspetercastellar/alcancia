@@ -1,8 +1,8 @@
 
 <template>
-  <section class="flex container ml-9 justify-between w-80	rounded-lg ">
+  <section class="flex justify-between rounded-lg  bg-purple-300 p-3 bg-opacity-50	">
 
-    <div class="flex flex-col border">
+    <div class="flex flex-col">
       <h1 class="prose prose-sm sm:prose lg:prose-lg xl:prose-xl text-left text-yellow-500">Monedas permitidas</h1>
       <div class="flex">
         <div class="allow"  v-for="(allo, index) in permitidas" :key="index">{{allo}}</div>
