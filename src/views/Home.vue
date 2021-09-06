@@ -25,7 +25,7 @@
          <tbody>
          <tr>
            <td> {{unidades}}</td>
-           <td>{{total}}</td>
+           <td>$ {{total}}</td>
          </tr>
          </tbody>
 

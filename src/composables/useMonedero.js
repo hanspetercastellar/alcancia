@@ -41,10 +41,16 @@ export default function () {
         data.mensaje2 = ""
         if (typeof data.monedaAconsultar != 'string') {
             data.mensaje2 = "Ingrese una denominacion permitida"
+
+            data.total = null
+            data.unidades = null
             return
         }
         if (!data.permitidas.includes(data.monedaAconsultar)) {
             data.mensaje2 = "Ingrese una denominacion permitida"
+
+            data.total = null
+            data.unidades = null
             return
         }
         let reduce = (a, b) => parseInt(a) + parseInt(b)
